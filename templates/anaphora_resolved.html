@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ru-RU">
+<head>
+{% if resolved %}
+<meta http-equiv="Refresh" content="1; url=http://dev.rus-ltc.org/brat/#/anaphora/{{ resolved }}">
+{% endif %}
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{% block title %}Default title {% endblock %}</title>
+</head>
+
+{% block header %}
+Russian an@phora resolution
+{% endblock %}
+{% block body %}
+<hr/>
+<p style="width : 700px;"><i>Your text is being processed...</i></p>
+<hr/>
+{% if lemmatized %}
+<h2>Your text lemmatized:</h2>
+{% for lemma in lemmatized %}
+{{ lemma }}
+
+{% endfor %}
+{% endif %}
+
+
+{% if text %}
+<h2>Your text raw:</h2>
+{{ text }}
+{% endif %}
+
+{% endblock %}

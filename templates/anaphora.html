@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+Russian an@phora resolver
+{% endblock %}
+{% block header %}
+Russian an@phora resolver<br/>
+Разрешение анафорических связей в русскоязычных текстах
+{% endblock %}
+{% block body %}
+<hr/>
+<p style="width : 700px;">Введите в окно ниже русскоязычный текст. Мы отобразим <a href="http://www.krugosvet.ru/enc/gumanitarnye_nauki/lingvistika/ANAFORA.html">анафорические связи</a> в нём.</p>
+<p style="width : 700px;">В связях будут отмечены различные типы анафорических местоимений (в широком смысле этого слова) и их антецеденты, то есть, выражения, на которые эти местоимения указывают.</p>
+ <form action="" method=post>
+ 	<textarea name="text" rows = "20" cols="80"></textarea>
+ 	<br/>
+ 	<input type="submit" value="Анализировать"/>
+ </form>
+<hr/>
+<p style="width : 700px;"><small><i>NB: текст, который вы загрузите, останется на сервере. </i></small></p>
+<p style="width : 700px;"><small><i>Робота-разрешателя анафоры построили:</i>
+<ul>
+<li><a href="mailto:m.ionov@corp.mail.ru">Макс Ионов</a></li>
+<li><a href="mailto:andrey.kutuzov@corp.mail.ru">Андрей Кутузов</a></li>
+</ul></small>
+</p>
+<img width="200" src ="/mailrulogo.png">
+
+
+{% endblock %}

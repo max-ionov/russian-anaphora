@@ -1,0 +1,4 @@
+pronouns	он	она	оно	они	его	её	их
+demonstratives	этот	это
+relatives	который
+reflexives	себя	свой
