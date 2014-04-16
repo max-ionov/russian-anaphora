@@ -6,17 +6,30 @@ from lemmatizer import lemmatizer
 from lemmatizer import GetGroups
 from lemmatizer import GetConjunctions
 
+def print_usage(file_used):
+    print 'Usage: ' + file_used + ' <file to analyze> <length of analysis window, in words> <output format: plain,xml,brat>'
+
+if len(sys.argv) > 4 or len(sys.argv) < 2:
+    print_usage(sys.argv[0])
+    exit(1)
+
+
 argument = sys.argv[1]
 
 window = 23
 if len(sys.argv) > 2:
     window = int(sys.argv[2])
+
+currentOutput = 'plain'
+if len(sys.argv) > 3:
+    currentOutput = sys.argv[3]
+
+
 pronouns = []
 reflexives = []
 demonstratives = []
 relatives = []
 
-currentOutput = 'xml'
 
 def printxml(antecedent,anaphora):
     print "<chain>"
@@ -78,8 +91,8 @@ if True:
     res = text.replace(u' ее',u' её')
     if currentOutput == 'plain':
 	print res.strip().encode('utf-8')
-    processed, curOffset = lemmatizer(res, startOffset = curOffset, loadFrom = argument)
-    #processed, curOffset = lemmatizer(res, startOffset = curOffset)
+    #processed, curOffset = lemmatizer(res, startOffset = curOffset, loadFrom = argument)
+    processed, curOffset = lemmatizer(res, startOffset = curOffset)
     for i in processed:
 	found = False
 	(token,lemma,tag,prob,offset) = i

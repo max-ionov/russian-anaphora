@@ -1,10 +1,17 @@
 russian-anaphora
 ================
 
-System for automatic pronominal resolution for Russian
+Ana@phora is a system for automatic pronominal resolution for Russian
 
 The repository is a mess right now. Here are the main moments:
 These are rule-based, machine learning and hybrid systems for pronominal anaphora resolution in Russian.
+
+Detailed instructions for rule-based mode are given in the INSTALL file
+
+
+Machine Learning mode
+=====================
+
 To get antecedents for anaphors using only ML, one can use resolute-text.py
 
 ```
