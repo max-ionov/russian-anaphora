@@ -47,7 +47,7 @@ where '23' is the length of analysis window in words and 'plain' is the output f
 One can increase analysis window length to improve detecting antecedents that are located far from their anaphors, at the expense of degrading precision, or vice versa. 
 23 words was shown empirically to be the best value w.r.t. F-measure.
 
-As fot the third argument, An@phora supports three output formats: plain, xml and brat. Plain output is shown above. 
+As for the third argument, An@phora supports three output formats: plain, xml and brat. Plain output is shown above. 
 XML output returns the same data in the format used at Dialog evaluation forum. It uses offsets in characters from the beginning of the text:
 <chain>
 <item sh="1778" ln="12" type="anaph">
@@ -86,7 +86,7 @@ The elements are: token, lemma, tagset (see http://nlp.lsi.upc.edu/freeling/doc/
 Authors
 =======
 An@phora was built by Max Ionov and Andrey Kutuzov, of applied linguistics team at Mail.ru search engine (http://go.mail.ru).
-You can reach authors by e-mail: m.ionov@corp.mail.ru, andrey.kutuzov@corp.mail.ru.
+You can reach the authors by e-mail: m.ionov@corp.mail.ru, andrey.kutuzov@corp.mail.ru.
 Details of the system are described in the paper "Influence of Morphology Processing Quality on Automated Anaphora Resolution for Russian", available at http://ling.go.mail.ru/ionov_kutuzov_anaphora.pdf
 
 Copyright
