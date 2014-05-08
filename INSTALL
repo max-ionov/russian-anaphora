@@ -15,7 +15,8 @@ To successfully run An@phora, you will need the following:
 
 1. Python (latest version of 2.7 branch is recommended)
 
-2. Freeling suite of language analyzers (http://nlp.lsi.upc.edu/freeling/). Latest version as of now is Freeling 3.1
+2. Freeling suite of language analyzers (http://nlp.lsi.upc.edu/freeling/). Latest version as of now is Freeling 3.1. 
+After installing it, don't forget to define environment variable FREELINGSHARE and point it to a directory with valid FreeLing data files (e.g. /usr/local/share/FreeLing). 
 
 3. The authors run An@phora on Linux, but theoretically it should work with MS Windows as well.
 
@@ -64,6 +65,9 @@ R2      anaphora Arg1:T4 Arg2:T3
 T5      antecedent 1778 1790
 T6      relative 1857 1864
 R3      anaphora Arg1:T6 Arg2:T5
+
+You can pass format and window length arguments in any order you like. An@phora will interpret integer argument as window length and string argument (if it is equal to 'xml','brat' or 'plain') as output format.
+You can also pass only one argument, depending on your needs.
 
 
 There is another advanced feature of An@phora - using morphological analysis performed beforehand. One can analyze the files with his/her tool of choice, save the data using Freeling format and reuse it many times. 

@@ -13,23 +13,26 @@ if len(sys.argv) > 4 or len(sys.argv) < 2:
     print_usage(sys.argv[0])
     exit(1)
 
-
 argument = sys.argv[1]
-
 window = 23
-if len(sys.argv) > 2:
-    window = int(sys.argv[2])
-
 currentOutput = 'plain'
-if len(sys.argv) > 3:
-    currentOutput = sys.argv[3]
 
+for arg in sys.argv[2:]:
+    if arg.isdigit() and 1 < int(arg) < 500:
+	window = int(arg)
+	continue
+    else:
+	if arg.strip() == 'plain' or arg.strip() == 'xml' or arg.strip() == 'brat':
+	    currentOutput = arg.strip()
+	    continue
+	else:
+	    print_usage(sys.argv[0])
+	    exit(1)
 
 pronouns = []
 reflexives = []
 demonstratives = []
 relatives = []
-
 
 def printxml(antecedent,anaphora):
     print "<chain>"
