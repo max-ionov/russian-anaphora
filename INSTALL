@@ -2,8 +2,8 @@ INSTALLATION AND USAGE GUIDE FOR AN@PHORA
 
 General overview
 ================
-Anap@ora is an open source system for detecting anaphoric chains in Russian texts. It takes raw text as an input and produces a list of anaphor-antecedent pairs.
-For details about what anaphora is, see https://en.wikipedia.org/wiki/Anaphora_(linguistics) or https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%B0%D1%84%D0%BE%D1%80%D0%B0_%28%D0%BB%D0%B8%D0%BD%D0%B3%D0%B2%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0%29
+An@phora is an open source system for detecting anaphoric chains in Russian texts. It takes raw text as an input and produces a list of anaphor-antecedent pairs.
+For details about what anaphora is, see https://en.wikipedia.org/wiki/Anaphora_(linguistics).
 
 The system was built as a participant of anaphora resolution systems evaluation forum held at the conference 'Dialog – 2014' (http://dialog-21.ru). 
 It is implemented in Python. Live demo is available using Brat on-line markup system [Stenetorp et al 2012] at http://ling.go.mail.ru/anaphora.
@@ -23,7 +23,8 @@ After installing it, don't forget to define environment variable FREELINGSHARE a
 Installation
 ============
 You need 3 Python scripts: anaphora.py, freeling.py and lemmatizer.py.
-Files prons.txt, reflexives.txt and relatives.txt provide lists of possible anaphoric expressions (in normal form). You can safely edit these lists, add your own words or remove those present.
+Files prons.txt, reflexives.txt and relatives.txt provide lists of possible anaphoric expressions (in normal form). 
+You can safely edit these lists, add your own words or remove those present.
 
 An@phora expects Freeling service to listen on port 50005 of localhost (can be changed in lemmatizer.py) and return morphological description of Russian texts.
 Once you have Freeling installed, you can run such a service with a command 'analyzer --server -p 50005 -f /usr/share/freeling/config/ru.cfg'.
@@ -32,7 +33,8 @@ To avoid this, replace files dicc.src and probabilitas.dat in /usr/share/freelin
 
 Usage
 =====
-General usage is simply 'anaphora.py + filename'. The file to analyze should be plain text in UTF-8. By default the system will output anaphoric chains in simple format with antecedents and anaphoric expressions separated with "<---":
+General usage is simply 'anaphora.py filename'. The file to analyze should be plain text in UTF-8. 
+By default the system will output anaphoric chains in simple format with antecedents and anaphoric expressions separated with "<---":
 описания        <---    оно             pronoun
 комментариев    <---    которые         relative
 просто название <---    оно             pronoun
@@ -43,9 +45,11 @@ Two settings can be tuned with the second and the third arguments. Default state
     anaphora.py filename 23 plain,
 where '23' is the length of analysis window in words and 'plain' is the output format. 
 
-One can increase analysis window length to improve detecting antecedents that are located far from their anaphors, at the expense of degrading precision, or vice versa. 23 words was shown empirically to be the best value w.r.t. F-measure.
+One can increase analysis window length to improve detecting antecedents that are located far from their anaphors, at the expense of degrading precision, or vice versa. 
+23 words was shown empirically to be the best value w.r.t. F-measure.
 
-As fot the third argument, An@phora supports three output formats: plain, xml and brat. Plain output is shown above. XML output returns the same data in the format used at Dialog evaluation forum. It uses offsets in characters from the beginning of the text:
+As for the third argument, An@phora supports three output formats: plain, xml and brat. Plain output is shown above. 
+XML output returns the same data in the format used at Dialog evaluation forum. It uses offsets in characters from the beginning of the text:
 <chain>
 <item sh="1778" ln="12" type="anaph">
 <cont><![CDATA[комментариев]]></cont>
@@ -70,13 +74,15 @@ You can pass format and window length arguments in any order you like. An@phora 
 You can also pass only one argument, depending on your needs.
 
 
-There is another advanced feature of An@phora - using morphological analysis performed beforehand. One can analyze the files with his/her tool of choice, save the data using Freeling format and reuse it many times. 
+There is another advanced feature of An@phora - using morphological analysis performed beforehand. 
+One can analyze the files with his/her tool of choice, save the data using Freeling format and reuse it many times. 
 Also, An@phora itself can save Freeling analysis to special annotation files correspondent to text files.
 To use this feature, one should replace in anaphora.py the string
     processed, curOffset = lemmatizer(res, startOffset = curOffset)
 with
     processed, curOffset = lemmatizer(res, startOffset = curOffset, loadFrom = argument)
-If for file under analysis there is a file with the same name and '.words' extension (e.g., 'test.txt.words' for 'test.txt'), then morhological analysis will be taken from this file. If it does not exist, Ap@phora will receive morphological analysis from Freeling service and save it in .words file.
+If for file under analysis there is a file with the same name and '.words' extension (e.g., 'test.txt.words' for 'test.txt'), then morhological analysis will be taken from this file. 
+If it does not exist, An@phora will receive morphological analysis from Freeling service and save it in .words file.
 Freeling format follows the example below:
     ругательствам   ругательство    NCDPAI0000      1       33
 The elements are: token, lemma, tagset (see http://nlp.lsi.upc.edu/freeling/doc/tagsets/tagset-ru.html), probability, offset.
@@ -84,8 +90,8 @@ The elements are: token, lemma, tagset (see http://nlp.lsi.upc.edu/freeling/doc/
 Authors
 =======
 An@phora was built by Max Ionov and Andrey Kutuzov, of applied linguistics team at Mail.ru search engine (http://go.mail.ru).
-You can reach authors by e-mail: m.ionov@corp.mail.ru, andrey.kutuzov@corp.mail.ru.
-Details of the system are described in the paper "Influence of Morphology Processing Quality on Automated Anaphora Resolution for Russian", available online at http://ling.go.mail.ru/ionov_kutuzov_anaphora.pdf
+You can reach the authors by e-mail: m.ionov@corp.mail.ru, andrey.kutuzov@corp.mail.ru.
+Details of the system are described in the paper "Influence of Morphology Processing Quality on Automated Anaphora Resolution for Russian", available at http://ling.go.mail.ru/ionov_kutuzov_anaphora.pdf
 
 Copyright
 =========
