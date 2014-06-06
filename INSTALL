@@ -22,7 +22,7 @@ After installing it, don't forget to define environment variable FREELINGSHARE a
 
 Installation
 ============
-You need 3 Python scripts: anaphora.py, freeling.py and lemmatizer.py.
+You need three Python scripts: anaphora.py, freeling.py and lemmatizer.py.
 Files prons.txt, reflexives.txt and relatives.txt provide lists of possible anaphoric expressions (in normal form). 
 You can safely edit these lists, add your own words or remove those present.
 
@@ -90,6 +90,7 @@ The elements are: token, lemma, tagset (see http://nlp.lsi.upc.edu/freeling/doc/
 Authors
 =======
 An@phora was built by Max Ionov and Andrey Kutuzov, of applied linguistics team at Mail.ru search engine (http://go.mail.ru).
+We also acknowledge support from the Basic Research Program at the National Research University Higher School of Economics (HSE) in 2014.
 You can reach the authors by e-mail: m.ionov@corp.mail.ru, andrey.kutuzov@corp.mail.ru.
 Details of the system are described in the paper "Influence of Morphology Processing Quality on Automated Anaphora Resolution for Russian", available at http://ling.go.mail.ru/ionov_kutuzov_anaphora.pdf
 
