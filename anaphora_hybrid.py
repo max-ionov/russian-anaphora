@@ -7,7 +7,7 @@ from lemmatizer import GetGroups
 from lemmatizer import GetConjunctions
 
 import anaphoramllib
-pronouns = anaphoramllib.LoadPronouns('pronouns.config.txt')
+pronouns = anaphoramllib.LoadPronouns('config.txt')
 mlResolutor = anaphoramllib.AnaphoraResolutorML()
 mlResolutor.LoadPronouns(pronouns)
 mlResolutor.SetWindow(20, 0)
