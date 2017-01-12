@@ -29,3 +29,11 @@ Here is the example:
 ```
 echo 'Мальчик, который сидел за столом, был задумчив.' | ./resolute-text.py - config.txt model.rf.all.dat
 ```
+
+Current status
+==============
+
+Currently, this repository is frozen, so it may become incompatible with newer versions of Freeling, plus it contains some bugs.
+There is another repository which grew from the same codebase but developed into something different: https://github.com/max-ionov/rucoref. It is still under development and some bugs present here are already fixed there.
+
+Hopefully, the code in this repository will be updated someday in order to fix the bugs.
